@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mehran University of Engineering & Technology Jamshoro</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #fff;
+        color: #0b1e3d;
+        line-height: 1.6;
+      }
+
+      header {
+      background-color: #0b1e3d;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    /* ===== Top Bar ===== */
+    header .top-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      background-color: #f9cb23;
+      color: #0b1e3d;
+      padding: 0.3rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05rem;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    /* ===== Navigation ===== */
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1.5rem;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    header nav .logo img {
+      height: 70px;
+      width: auto;
+    }
+
+    header nav p {
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      line-height: 1.2;
+      margin-left: 1rem;
+      flex: 1;
+      min-width: 180px;
+    }
+
+    header nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    header nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    header nav a:hover {
+      color: #fecd1a;
+    }
+
+    /* ===== Hamburger Menu (for mobile) ===== */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* ===== Responsive Design ===== */
+    @media (max-width: 900px) {
+      header nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      header nav ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        background-color: #0b1e3d;
+        padding: 1rem;
+        margin-top: 0.5rem;
+      }
+
+      header nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+        position: absolute;
+        right: 1.5rem;
+        top: 1.2rem;
+      }
+
+      header nav p {
+        margin: 0.5rem 0 0 0;
+        text-align: left;
+      }
+    }
+      .hero {
+        position: relative;
+        background-image: linear-gradient(
+            rgba(11, 30, 61, 0.7),
+            rgba(11, 30, 61, 0.7)
+          ),
+          url("assets/muet.png");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: left;
+        padding: 6.27rem 2rem;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+        max-width: 600px;
+        font-weight: 700;
+      }
+
+      .hero p {
+        margin: 1rem 0;
+        max-width: 550px;
+      }
+
+      .hero button {
+        margin-right: 10px;
+        padding: 0.7rem 1.5rem;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      .hero .apply {
+        background-color: #fecd1a;
+        color: #0b1e3d;
+      }
+
+      .hero .portal {
+        background-color: white;
+        color: #0b1e3d;
+      }
+      .announcement {
+  background-color: #eef2f5; /* same color you used */
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 12px;
+  margin: 2rem auto;
+  width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.announcement:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.announcement h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #0b1e3d; /* dark navy blue for good contrast */
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.announcement-content p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+.announcement-content strong {
+  color: #0b5fa5; /* MUET blue accent */
+}
+
+
+
+.why-muet {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.why-muet h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0b1e3d;
+  margin-bottom: 1.5rem;
+}
+
+.why-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.why-box {
+  background-color: #fecd1a;
+  color: #0b1e3d;
+  font-weight: 500;
+  padding: 1.5rem;
+  width: 250px;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.why-box p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.director {
+  background-color: #f7f9fc;
+  padding: 4rem 2rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  width: 90%;
+}
+
+.director-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.director .text {
+  flex: 1 1 45%;
+  color: #0b1e3d;
+}
+
+.director .text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0b1e3d;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.director .text h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #0b5fa5;
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+.director .quote {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #0b5fa5;
+  margin-bottom: 1rem;
+}
+
+.director .text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.director .name {
+  font-weight: 600;
+  color: #0b1e3d;
+  margin-top: 1.2rem;
+}
+
+.director .image {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.director .image img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.director .image img:hover {
+  transform: scale(1.03);
+}
+
+.admission-criteria {
+  background-color: #f7f9fc;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 12px;
+  margin: 2rem auto;
+  width: 90%;
+}
+
+.admission-criteria h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0b1e3d;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.admission-criteria h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background-color: #0b5fa5;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+  color: #0b1e3d;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.card p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+}
+
+.card button {
+  background-color: #fecd1a;
+  color: #0b1e3d;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #e6b914;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+
+
+.admission-calendar {
+  background-color: #fff;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.admission-calendar h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0b1e3d;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.admission-calendar h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #fecd1a; /* same gold as your buttons */
+  margin: 10px auto 0;
+  border-radius: 3px;
+}
+
+/* Timeline container */
+.timeline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #fecd1a;
+  z-index: 0;
+  border-radius: 3px;
+}
+
+/* Timeline items */
+.timeline-item {
+  text-align: center;
+  position: relative;
+  flex: 1;
+  z-index: 1;
+}
+
+.timeline-item .dot {
+  width: 20px;
+  height: 20px;
+  background-color: #fecd1a;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+}
+
+.timeline-item h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0b1e3d;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-item p {
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline::before {
+    width: 3px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+  }
+
+  .timeline-item {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .timeline-item .dot {
+    margin: 0 auto 1rem;
+  }
+}
+
+      .join {
+        position: relative;
+        background-image: linear-gradient(
+            rgba(11, 30, 61, 0.7),
+            rgba(11, 30, 61, 0.7)
+          ),
+          url("assets/join.png");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        padding: 11rem 2rem;
+      }
+      .join button {
+        background-color: #fecd1a;
+        border: none;
+        padding: 0.7rem 1.5rem;
+        border-radius: 20px;
+        font-weight: 600;
+        color: #0b1e3d;
+        cursor: pointer;
+        margin-top: 1rem;
+      }
+
+      footer {
+        background-color: #0b1e3d;
+        color: white;
+        padding: 3rem 1.5rem 1rem;
+      }
+
+      .footer-top {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-top div {
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .footer-top h3 {
+        margin-bottom: 1rem;
+        color: #fecd1a;
+      }
+
+      footer a {
+        color: #ddd;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.3rem;
+        font-size: 0.9rem;
+      }
+
+      footer a:hover {
+        color: #fecd1a;
+      }
+
+      footer p {
+        text-align: center;
+        font-size: 0.85rem;
+        color: #bbb;
+        margin-top: 1rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero {
+          text-align: center;
+          padding: 4rem 1rem;
+        }
+        .hero h1,
+        .hero p {
+          max-width: 100%;
+        }
+        header nav ul {
+          display: none;
+        }
+        .why-box {
+          width: 90%;
+        }
+        .director {
+          text-align: center;
+        }
+        .timeline::before {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="top-bar">
+        <span>📞 +92-22-2772250</span> |
+        <span>✉️ admissions.muet.edu.pk</span> |
+        <span>🏛️ Jamshoro, Sindh</span>
+      </div>
+  
+      <nav>
+        <div class="logo">
+          <img
+            src="https://www.muetkhp.edu.pk/wp-content/uploads/2023/11/logomuetszab-1-624x623.png"
+            alt="MUET Logo"
+          />
+        </div>
+        <p>
+          DIRECTORATE OF ADMISSIONS <br />
+          Mehran University of Engineering and Technology, Jamshoro
+        </p>
+  
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+  
+        <ul id="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Admissions</a></li>
+          <li><a href="#">Departments</a></li>
+          <li><a href="#">Downloads</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+  
+
+    <section class="hero">
+      <h1>
+        Start your future at MEHRAN University of Engineering and Technology
+        Jamshoro
+      </h1>
+      <p>
+        Pursue excellence in a culture of growth, dedication, and diversity.
+      </p>
+      <button class="apply">Apply Now</button>
+      <button class="portal">Click Admission Portal</button>
+    </section>
+
+    <section class="announcement">
+      <h2>📢 Important Announcement</h2>
+      <div class="announcement-content">
+        <p><strong>Admissions Open 2025</strong> | Apply Now | <strong>Fee Deadline:</strong> Oct 30</p>
+        <p>
+          Admissions are open for the Academic Session 2025–26 at 
+          <strong>Hyderabad Institute of Arts, Science & Technology, Hyderabad</strong> <br />
+          (Affiliated with <strong>Mehran University of Engineering & Technology, Jamshoro</strong>)
+        </p>
+      </div>
+    </section>
+    
+
+    <section class="why-muet">
+      <h2>Why MUET?</h2>
+      <div class="why-container">
+        <div class="why-box">
+          🎓 <strong>Quality Education</strong>
+          <p>MUET provides high-quality engineering and technology education that meets international standards and industry needs.</p>
+        </div>
+    
+        <div class="why-box">
+          👨‍🏫 <strong>Expert Faculty</strong>
+          <p>Our experienced and qualified faculty ensure excellent teaching, mentoring, and research guidance for students.</p>
+        </div>
+    
+        <div class="why-box">
+          🏛️ <strong>State-of-the-Art Facilities</strong>
+          <p>MUET offers modern laboratories, smart classrooms, and a rich digital library to support innovative learning and research.</p>
+        </div>
+    
+        <div class="why-box">
+          💰 <strong>Scholarships & Opportunities</strong>
+          <p>The university provides merit-based and need-based scholarships to support talented and deserving students.</p>
+        </div>
+      </div>
+    </section>
+    
+
+    <section class="director">
+      <div class="director-content">
+        <div class="text">
+          <h2>Director's Message</h2>
+          <p class="quote">
+            “Anyone who has never made a mistake has never tried anything new!”
+          </p>
+          <p>
+            We believe that great universities are not built overnight. With
+            passion and continuous effort, we strive to make MUET a leading hub of
+            learning, innovation, and excellence.
+          </p>
+          <p class="name">— Director, Admissions MUET Jamshoro</p>
+        </div>
+    
+        <div class="image">
+          <img
+            src="https://admissions.muet.edu.pk/images/dir_pic.jpg"
+            alt="Director"
+          />
+        </div>
+      </div>
+    </section>
+    
+
+    <section class="admission-criteria">
+      <h2>Admission Criteria</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Undergraduate</h3>
+          <p>Explore programs, eligibility requirements, and merit criteria for undergraduate admissions at MUET.</p>
+          <button>Learn More</button>
+        </div>
+    
+        <div class="card">
+          <h3>Postgraduate</h3>
+          <p>Discover postgraduate opportunities, entrance requirements, and research-based programs offered by MUET.</p>
+          <button>Learn More</button>
+        </div>
+    
+        <div class="card">
+          <h3>Admission Process</h3>
+          <p>Understand the step-by-step admission procedure, important dates, and documentation guidelines.</p>
+          <button>Learn More</button>
+        </div>
+      </div>
+    </section>
+    
+    <section class="admission-calendar">
+      <h2>Admission Calendar</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="dot"></div>
+          <div class="content">
+            <h3>30 Sept 2025</h3>
+            <p>Application Deadline</p>
+          </div>
+        </div>
+    
+        <div class="timeline-item">
+          <div class="dot"></div>
+          <div class="content">
+            <h3>30 Oct 2025</h3>
+            <p>Entrance Exam</p>
+          </div>
+        </div>
+    
+        <div class="timeline-item">
+          <div class="dot"></div>
+          <div class="content">
+            <h3>15 Nov 2025</h3>
+            <p>Interview</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <section class="join">
+      <h2>Join Mehran UET</h2>
+      <p>
+        MUET is committed to excellence in education, research, and innovation. The University actively shares knowledge and expertise from around the world to bring the latest developments and best practices into today’s learning environment.
+      </p>
+      <button>Apply Now</button>
+    </section>
+
+    <footer>
+      <div class="footer-top">
+        <div>
+          <h3>Quick Links</h3>
+          <a href="#">Home</a>
+          <a href="#">Admissions</a>
+          <a href="#">Departments</a>
+          <a href="#">Contact</a>
+        </div>
+        <div>
+          <h3>Downloads</h3>
+          <a href="#">Prospectus</a>
+          <a href="#">Forms</a>
+          <a href="#">Syllabus</a>
+        </div>
+        <div>
+          <h3>Latest News</h3>
+          <a href="#">Admissions Open 2025</a>
+          <a href="#">Entrance Exam Schedule</a>
+        </div>
+        <div>
+          <h3>Contact Us</h3>
+          <a href="#">info@muet.edu.pk</a>
+          <a href="#">+92-22-2772250</a>
+          <a href="#">Jamshoro, Sindh</a>
+        </div>
+      </div>
+      <p>
+        © 2025 Mehran University of Engineering & Technology Jamshoro. All
+        Rights Reserved.
+      </p>
+    </footer>
+
+    <script>
+     
+     const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      menuToggle.classList.toggle("open");
+    });
+    </script>
+  </body>
+</html>
